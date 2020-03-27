@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <script src="https://kit.fontawesome.com/f5be5aaf66.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main>
+    <!-- Quote Section -->
+
+    <div class="quote-section text-center align-self-end">
+      <h2 class="quote font-weight-bold"> 
+        <sup><i class="fas fa-quote-left"></i></sup>
+         Something will be good!
+      </h2>
+    </div>
+
+    <section>
+      <!-- Date, Time and Weather -->
+      <div class="info">
+        <div class="bg-primary p-3 p-md-4 shadow-lg time-and-weather">
+        <div class="row no-gutters">
+          <div class="col-8 align-self-center date">
+            <h1>03:20 <small>PM</small></h1>
+            <h4>15 March 2020 - Sun</h4>
+          </div>
+          <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+            <div class="weather-icon">
+              <i class="fas fa-cloud-sun my-2"></i>
+            </div>
+            <h5 class="deg">30&#176; Sunny</h5>
+          </div>
+        </div>
+
+        <!-- Temperatue and other Info -->
+
+        <div class="row no-gutters my-2">
+          <div class="col-6 text-center temp">
+            Temperature : 30&#176; C
+          </div>
+          <div class="col-6 text-center pressure">
+            Pressure : 1015 hPa
+          </div>
+        </div>
+
+        <div class="row no-gutters my-2">
+          <div class="col-6 text-center humidity">
+            Humidity : 57%
+          </div>
+          <div class="col-6 text-center wind">
+            Wind : 14 km/h
+          </div>
+        </div>
+
+        <!-- Music Player -->
+
+        <div class="bg-light text-dark p-2 text-center rounded-lg">
+          <h5 id="music-des">Study Music</h5>
+          <audio src="./music/study.mp3" controls loop class="w-100" id="music-player"></audio>
+          <!-- <div class="row no-gutters mx-1">
+            <div class="col-2 align-self-center pr-2">01:20</div>
+            <div class="col-7 align-self-center">
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="col-3 align-self-center">
+              <i class="fas fa-play fa-2x text-secondary ml-1"></i>
+              <i class="fas fa-redo-alt float-right mt-2"></i>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- StopWatch -->
+
+        <div class="bg-light text-dark px-3 py-2 rounded-lg mt-3">
+          <h5>Stop Watch</h5>
+          <div class="row no-gutters">
+            <div class="col-10">
+              <h1>
+                <span class="timing">00:00:00</span> 
+                <small><i class="far fa-play-circle" id="play-pause-watch"></i></small> 
+                <i class="fas fa-redo-alt h6" id="reset-watch"></i>
+              </h1>
+            </div>
+            <div class="col-2 align-self-center">
+              <div class="dropdown">
+                <i class="fas fa-cog float-right h6" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i> 
+    
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalCenter2">Change Music</button>
+
+                  <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalCenter">Change Background</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Music Modal -->
+          <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Pick Your Music</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                
+                  <div class="row no-gutter d-flex justify-content-around" id="music-buttons">
+                    <button class="col-10 col-md-3 m-2 p-2 text-center btn btn-outline-secondary" id="study-btn">
+                      <i class="fas fa-book-open fa-3x py-4"></i>
+                      <h5>Study</h5>
+                    </button>
+                    <button class="col-10 col-md-3 m-2 p-2 text-center btn btn-outline-secondary" id="meditation-btn">
+                      <i class="fas fa-male fa-3x py-4"></i>
+                      <h5>Meditation</h5>
+                    </button>
+                    <button class="col-10 col-md-3 m-2 p-2 text-center btn btn-outline-secondary" id="coding-btn">
+                      <i class="fas fa-laptop-code fa-3x py-4"></i>
+                      <h5>Coding</h5>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bg Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Choose Background</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="row no-gutters">
+                    <div class="col-6 col-md-3">
+                      <img src="./images/17775.jpg" class="img-fluid p-1" alt="img">
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <img src="./images/apple_mac_os_x_el_capitan-3840x2160.jpg" class="img-fluid p-1" alt="img">
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <img src="./images/macos-high-sierra-stock-5k-9l.jpg" class="img-fluid p-1" alt="img">
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <img src="./images/sky-4k-wallpaper_065241935_309.jpg" class="img-fluid p-1" alt="img">
+                    </div>
+                  </div>
+
+                  <div class="row no-gutters">
+                    <div class="col-6 col-md-3">
+                      <img src="./images/Full-HD-Wallpapers-and-Desktop-Background-Images-1080p-3.jpg" class="img-fluid p-1" alt="img">
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <img src="./images/adult-blur-buildings-712786.jpg" class="img-fluid p-1" alt="img">
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <img src="./images/astronomy-beautiful-clouds-355465.jpg" class="img-fluid p-1" alt="img">
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <img src="./images/hq6rdm7KG.jpg" class="img-fluid p-1" alt="img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+
+      
+
+      <!-- Todo List Section -->
+
+      <div class="d-flex flex-column justify-content-start align-items-center" id="todo-section">
+        <div class="add-todo shadow-lg text-center p-3 p-md-4">
+          <h3>Your To-Do List</h3>
+          <div class="row no-gutters mt-3">
+            <div class="col-10">
+              <input type="text" name="todo" placeholder="Add Todo" value="" class="form-control" id="todo" />
+            </div>
+            <i class="fas fa-plus-square fa-2x col-2" id="add-todo-btn"></i>
+          </div>
+        </div>
+
+        <!-- All Todos -->
+        <div id="custom-todos" class="d-flex flex-column justify-content-start align-items-center my-2 w-100"></div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="./dashboard.js"></script>
+  <script src="./todos.js"></script>
+</body>
+</html>

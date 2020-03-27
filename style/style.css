@@ -1,0 +1,231 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/Full-HD-Wallpapers-and-Desktop-Background-Images-1080p-3.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 40% 60%;
+      grid-template-rows: 40% 60%;
+  overflow-x: hidden;
+}
+
+main .quote {
+  font-size: 3.5rem;
+  margin: 3% 0;
+}
+
+@media screen and (max-width: 1400px) {
+  main .quote {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main .quote {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main .quote {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .quote {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  main .quote {
+    margin: 3% auto;
+  }
+}
+
+main section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 1400px) {
+  main section {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+main section .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media screen and (max-width: 800px) {
+  main section .info {
+    display: block;
+  }
+}
+
+main section .info .date h1 {
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 430px) {
+  main section .info .date h1 {
+    font-size: 1.8rem;
+  }
+}
+
+main section .info .date h4 {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 430px) {
+  main section .info .date h4 {
+    font-size: 1.2rem;
+  }
+}
+
+main section .info .weather-icon {
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 430px) {
+  main section .info .weather-icon {
+    font-size: 3rem;
+  }
+}
+
+main section .info .deg {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 430px) {
+  main section .info .deg {
+    font-size: 1rem;
+  }
+}
+
+main .time-and-weather {
+  width: 50%;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  main .time-and-weather {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .time-and-weather {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  main .time-and-weather {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+main .add-todo {
+  background: #845EC2;
+  border-radius: 15px;
+  width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  main .add-todo {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .add-todo {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  main .add-todo {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+main .todo {
+  background: #FF9671;
+  border-radius: 10px;
+  width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  main .todo {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .todo {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  main .todo {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  main {
+    height: 100%;
+    background-size: cover;
+    -ms-grid-rows: 20% 80%;
+        grid-template-rows: 20% 80%;
+  }
+  main #todo-section {
+    margin: 3% 0;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  main {
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */
