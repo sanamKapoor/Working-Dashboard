@@ -428,4 +428,14 @@ main .todo i {
         grid-template-rows: auto;
   }
 }
+
+.water-mark {
+  font-size: 1rem;
+}
+
+@media (max-width: 300px) {
+  .water-mark {
+    font-size: 0.8rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
