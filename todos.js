@@ -16,14 +16,13 @@ function init(){
 
 init();
 
-
 todoBtn.addEventListener('click', addTodo);
 
 function addTodo(){
   let todo = todoInput.value;
   let todos = [];
 
-  if(todo === undefined || todo === ''){
+  if(todo.trim() === undefined || todo.trim() === ''){
     return;
   }
 
@@ -31,7 +30,6 @@ function addTodo(){
   {
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
-
   } else {
     todos = JSON.parse(localStorage.getItem('todos'));
     todos.push(todo);
@@ -57,25 +55,25 @@ function makeTodo(){
 
   todoRow.className = 'todo row shadow p-2 no-gutters my-2';
   todoCol_1.className = 'col-10 d-flex justify-content-start align-items-center';
-  todoCol_2.className = 'col-2 align-self-center';
+  todoCol_2.className = 'col-2 text-center align-self-center';
 
   let checkBtn = document.createElement('i');
   let deleteBtn = document.createElement('i');
 
-  checkBtn.className = 'far fa-circle mx-4';
-  deleteBtn.className = 'far fa-trash-alt fa-2x';
+  checkBtn.className = 'far fa-circle mx-3 mx-sm-4';
+  deleteBtn.className = 'far fa-trash-alt';
 
   if(completeTodos){
     completeTodos.forEach(t => {
       if(t === todo){
-        checkBtn.className = 'far fa-check-circle mx-4';
-        todoRow.style.backgroundColor = '#00C9A7';
+        checkBtn.className = 'far fa-check-circle mx-3 mx-sm-4';
+        todoRow.style.backgroundColor = 'lightslategray';
       }
     })
   }
 
   let todoText = document.createElement('h5');
-  todoText.className = 'align-self-end';
+  todoText.className = 'align-self-center text-break';
   todoText.innerHTML = `${todo}`;
 
   todoCol_1.append(checkBtn);
@@ -92,7 +90,7 @@ function makeTodo(){
   checkBtn.addEventListener('click', e => {
     let c = e.target.className;
     
-    if(c === 'far fa-circle mx-4'){ 
+    if(c === 'far fa-circle mx-3 mx-sm-4'){ 
       if(localStorage.getItem('completeTodos') === null)
         {
           completeTodos.push(todo);
@@ -104,8 +102,8 @@ function makeTodo(){
           localStorage.setItem('completeTodos', JSON.stringify(completeTodos));
         } 
 
-      e.target.className = 'far fa-check-circle mx-4';
-      todoRow.style.backgroundColor = '#00C9A7';
+      e.target.className = 'far fa-check-circle mx-3 mx-sm-4';
+      todoRow.style.backgroundColor = 'lightslategray';
     } 
     else {
       completeTodos = completeTodos.filter(t => {
@@ -116,8 +114,8 @@ function makeTodo(){
 
       localStorage.setItem('completeTodos', JSON.stringify(completeTodos));
 
-      e.target.className = 'far fa-circle mx-4';
-      todoRow.style.backgroundColor = '#FF9671';
+      e.target.className = 'far fa-circle mx-3 mx-sm-4';
+      todoRow.style.backgroundColor = 'lightcoral';
     }
   })
 

@@ -6,7 +6,7 @@ let date = new Date().toDateString().split(' ');
 let dateSection = document.querySelector('.date h4');
 let timeSection = document.querySelector('.date h1');
 
-dateSection.innerHTML = `${date[2]} ${date[1]} ${date[3]} - ${date[0]}`;
+dateSection.textContent = `${date[2]} ${date[1]} ${date[3]} - ${date[0]}`;
 
 setInterval(() => {
   let hours = new Date().getHours();
@@ -61,9 +61,8 @@ function weather(){
       var api = `${proxy}https://api.darksky.net/forecast/fdf36c1e47d51baa0462804ed7bc27b1/${lat},${long}`;
 
    fetch(api)
-    .then(res => {return res.json()})
+    .then(res => res.json())
     .then(data => {
-      console.log(data);
       let { temperature, summary, humidity, pressure, windSpeed, icon } = data.currently; 
 
       //      Set dom elements
@@ -115,7 +114,6 @@ let quotes = await data.quotes;
 let randomNum = Math.floor(Math.random() * 90 + 1);
 
 let quote = quotes[randomNum].quote;
-console.log(quote);
 quoteElem.innerHTML = `<sup><i class="fas fa-quote-left"></i></sup> ${quote}`;
 
 }
@@ -151,7 +149,7 @@ function startWatch(e){
     }
 
 
-    displayTiming.innerHTML = `${hours}:${minutes}:${seconds}`;
+    displayTiming.textContent = `${hours}:${minutes}:${seconds}`;
 
 }
 
@@ -164,19 +162,16 @@ function addZero(n){
 
 function stopWatch(e){
   if(status === "stopped"){
-
     interval = setInterval(startWatch, 1000);
     let elem = document.getElementById("play-pause-watch");
     elem.className = 'far fa-pause-circle';
     status = "started";
-
   }
   else{
       clearInterval(interval);
       let elem = document.getElementById("play-pause-watch");
       elem.className = 'far fa-play-circle';
       status = "stopped";
-
   }
 }
 
@@ -188,7 +183,7 @@ function resetStopWatch(){
     seconds = '00';
     minutes = '00';
     hours = '00';
-    document.querySelector(".timing").innerHTML = "00:00:00";
+    document.querySelector(".timing").textContent = "00:00:00";
     document.querySelector("#play-pause-watch").className = 'far fa-play-circle';
 }
 
